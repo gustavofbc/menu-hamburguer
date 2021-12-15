@@ -44,9 +44,6 @@ a:hover {
 }
 
 @media (max-width: 600px){
-  #btn-mobile {
-    display: block;
-  }
   #menu {
     display: block;
     position: absolute;
@@ -74,5 +71,47 @@ a:hover {
     padding: 1rem 0rem;
     margin: 0rem 1rem;
     border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  }
+
+  #btn-mobile {
+    display: flex;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: 0.5rem;
+  }
+
+  #hamburguer {
+    display: block;
+    border-top: 2px solid;
+    width: 20px;
+  }
+
+  #hamburguer::after, #hamburguer::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    /* pega o valor da cor atual do elemento e aplica aqui*/
+    background: currentColor;
+    margin-top: 5px;
+    transition: 0.3s;
+    /* serve para que o #nav.ativo #hamburguer::after possa atribur o "top" pois só funciona em position fixed, relative ou absolute */
+    position: relative;
+  }
+
+  #nav.ativo #hamburguer {
+    /* este é o elemento criado no #hamburguer */
+    border-top: transparent;
+  }
+  
+  #nav.ativo #hamburguer::before {
+    transform: rotate(135deg);
+  }
+  #nav.ativo #hamburguer::after {
+    transform: rotate(-135deg);
+    top: -7px;
   }
 }
