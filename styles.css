@@ -49,5 +49,21 @@ a:hover {
   }
   #menu {
     display: none;
+    position: absolute;
+    width: 100%;
+    /* macete: tamanho total da tela - tamanhop definido para o menu */
+    height: calc(100vh - 70px);
+    top: 70px;
+    right: 0px;
+    background: #e7e7e7;
+    z-index: 1000;
+  }
+  #nav.ativo #menu {
+    display: block;
+  }
+  #menu a {
+    padding: 1rem 0rem;
+    margin: 0rem 1rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
   }
 }
