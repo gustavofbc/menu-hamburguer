@@ -38,3 +38,16 @@ a:hover {
   display: block;
   padding: 0.5rem;
 }
+
+#btn-mobile {
+  display: none;
+}
+
+@media (max-width: 600px){
+  #btn-mobile {
+    display: block;
+  }
+  #menu {
+    display: none;
+  }
+}
